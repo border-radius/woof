@@ -24,7 +24,7 @@
     "ws": "^1.0.1"
   },
   "scripts": {
-    "test": "mocha --bail test/wscache.js test/http.js",
+    "test": "mocha --bail test/wscache.js test/http.js && protractor protractor.js",
     "start": "nodejs index.js"
   },
   "repository": {
