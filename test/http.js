@@ -33,4 +33,26 @@ describe('http', function () {
     .expect(200)
     .end(done);
   });
+
+  it('should serve compiled jade template', function (done) {
+    request(app)
+    .get('/')
+    .expect('content-type', 'text/html; charset=utf-8')
+    .expect(200)
+    .expect(function (res) {
+      assert(res.text.indexOf('Woof') > -1);
+    })
+    .end(done);
+  });
+
+  it('should serve compiled jade template on different URL', function (done) {
+    request(app)
+    .get('/u/krkm')
+    .expect('content-type', 'text/html; charset=utf-8')
+    .expect(200)
+    .expect(function (res) {
+      assert(res.text.indexOf('Woof') > -1);
+    })
+    .end(done);
+  });
 });
