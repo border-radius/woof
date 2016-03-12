@@ -1,7 +1,8 @@
 doctype html
-html
+html(ng-app="woof")
   head
     title Woof
     link(rel="stylesheet" type="text/css" href="/index.css")
   body
+    .container(ng-view)
     script(src="/index.js")
