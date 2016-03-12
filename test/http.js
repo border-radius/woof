@@ -17,4 +17,12 @@ describe('http', function () {
     })
     .end(done);
   });
+
+  it('should serve compiled css', function (done) {
+    request(app)
+    .get('/index.css')
+    .expect('content-type', 'text/css; charset=UTF-8')
+    .expect(200)
+    .end(done);
+  });
 });

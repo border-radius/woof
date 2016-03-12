@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "express": "^4.13.4",
+    "less-middleware": "^2.1.0",
     "lodash": "^4.6.1",
     "mokou-websocket": "^1.0.0",
     "supertest": "^1.2.0"
@@ -17,7 +18,8 @@
     "ws": "^1.0.1"
   },
   "scripts": {
-    "test": "mocha --bail test/wscache.js test/http.js"
+    "test": "mocha --bail test/wscache.js test/http.js",
+    "start": "nodejs index.js"
   },
   "repository": {
     "type": "git",
