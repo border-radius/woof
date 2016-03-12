@@ -1,0 +1,30 @@
+{
+  "name": "woof",
+  "version": "1.0.0",
+  "description": "Frontend for bnw.im websockets with Telegram-like UI",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "lodash": "^4.6.1",
+    "mokou-websocket": "^1.0.0"
+  },
+  "devDependencies": {
+    "mocha": "^2.4.5",
+    "ws": "^1.0.1"
+  },
+  "scripts": {
+    "test": "mocha --bail"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/border-radius/woof.git"
+  },
+  "author": "border-radius",
+  "license": "WTFPL",
+  "bugs": {
+    "url": "https://github.com/border-radius/woof/issues"
+  },
+  "homepage": "https://github.com/border-radius/woof#readme"
+}
