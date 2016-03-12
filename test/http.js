@@ -25,4 +25,12 @@ describe('http', function () {
     .expect(200)
     .end(done);
   });
+
+  it('should serve client scripts', function (done) {
+    request(app)
+    .get('/index.js')
+    .expect('content-type', 'application/javascript')
+    .expect(200)
+    .end(done);
+  });
 });
