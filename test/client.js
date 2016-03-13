@@ -26,8 +26,11 @@ describe('client', function () {
     params = testRouter('/u/vrusha');
     expect(params.chat.evaluate('show.messages[0].user')).toBe('vrusha');
     expect(
-      params.messages.get(0).element(by.css('.user')).getText()
+      params.messages.get(0).element(by.css('.username')).getText()
     ).toBe('vrusha');
+    expect(
+      params.messages.get(0).element(by.css('.username a')).getAttribute('href')
+    ).toBe('http://localhost:8888/u/vrusha');
     expect(
       params.messages.get(0).element(by.css('.userpic a')).getAttribute('href')
     ).toBe('http://localhost:8888/u/vrusha');
