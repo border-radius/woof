@@ -3,6 +3,10 @@ html(ng-app="woof")
   head
     title Woof
     link(rel="stylesheet" type="text/css" href="/index.css")
+    base(href="/")
   body
     .container(ng-view)
     script(src="/index.js")
+    each template in templates
+      script(type="text/ng-template" id="#{template.id}")
+        |!{template.html}
