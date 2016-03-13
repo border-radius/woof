@@ -40,6 +40,9 @@ describe('client', function () {
     expect(
       params.messages.get(0).element(by.css('.id')).getText()
     ).toBe('WJF6FI');
+    expect(
+      params.chat.element(by.css('.join')).getText()
+    ).toBe('Join');
 
     params = testRouter('/p/DL9OGX');
     expect(params.chat.evaluate('show.replies[1].text')).toBe('хуест');

@@ -4,7 +4,8 @@ module.exports = function () {
   return {
     templateUrl: 'message',
     scope: {
-      content: '=content'
+      content: '=content',
+      joinable: '=joinable'
     }
   }
 };
