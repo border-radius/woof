@@ -1,4 +1,4 @@
-.user(ng-bind="user")
-.club(ng-bind="club")
-.post(ng-bind="post")
-.tag(ng-bind="tag")
+.chat
+  message(ng-repeat="message in show.messages|orderBy:'-date'" content="message")
+  message(ng-if="show.message" content="show.message")
+  message(ng-repeat="reply in show.replies|orderBy:'date'" content="reply")

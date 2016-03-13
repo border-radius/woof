@@ -15,40 +15,48 @@ describe('client', function () {
   function testRouter (route) {
     browser.get('http://localhost:8888' + route);
     return {
-      user: element(by.css('.user')),
-      club: element(by.css('.club')),
-      post: element(by.css('.post')),
-      tag: element(by.css('.tag'))
+      chat: element(by.css('.chat')),
+      messages: element.all(by.css('.message'))
     };
   }
 
   it('should check router work properly', function () {
     var params;
-    
+
     params = testRouter('/u/vrusha');
-    expect(params.user.getText()).toBe('vrusha');
-    expect(params.user.evaluate('show.messages[0].user')).toBe('vrusha');
+    expect(params.chat.evaluate('show.messages[0].user')).toBe('vrusha');
+    expect(
+      params.messages.get(0).element(by.css('.user')).getText()
+    ).toBe('vrusha');
     
     params = testRouter('/c/iranian');
-    expect(params.club.getText()).toBe('iranian');
-    expect(params.club.evaluate('show.messages[0].text')).toBe('Welcome to Iranian Club');
+    expect(params.chat.evaluate('show.messages[0].text')).toBe('Welcome to Iranian Club');
+    expect(
+      params.messages.get(4).element(by.css('.text')).getText()
+    ).toBe('Welcome to Iranian Club');
 
     params = testRouter('/t/rorschach');
-    expect(params.tag.getText()).toBe('rorschach');
-    expect(params.club.evaluate('show.messages[0].id')).toBe('WJF6FI');
+    expect(params.chat.evaluate('show.messages[0].id')).toBe('WJF6FI');
+    expect(
+      params.messages.get(0).element(by.css('.id')).getText()
+    ).toBe('WJF6FI');
 
     params = testRouter('/p/DL9OGX');
-    expect(params.post.getText()).toBe('DL9OGX');
-    expect(params.post.evaluate('show.replies[1].text')).toBe('хуест');
+    expect(params.chat.evaluate('show.replies[1].text')).toBe('хуест');
+    expect(
+      params.messages.get(2).element(by.css('.id')).getText()
+    ).toBe('DL9OGX/YAX');
 
     params = testRouter('/u/ileamare/c/nethack');
-    expect(params.user.getText()).toBe('ileamare');
-    expect(params.club.getText()).toBe('nethack');
-    expect(params.user.evaluate('show.messages[4].id')).toBe('CZJVJN');
+    expect(params.chat.evaluate('show.messages[4].id')).toBe('CZJVJN');
+    expect(
+      params.messages.get(0).element(by.css('.text')).getText()
+    ).toBe('Опять столкнулся с лавочником. Долбили друг дпуга спеллами, а потом я умер от голода -_-');
 
     params = testRouter('/u/muromec/t/анархи');
-    expect(params.user.getText()).toBe('muromec');
-    expect(params.tag.getText()).toBe('анархи');
-    expect(params.user.evaluate('show.messages[0].id')).toBe('089YX8');
+    expect(params.chat.evaluate('show.messages[0].id')).toBe('089YX8');
+    expect(
+      params.messages.get(0).element(by.css('.id')).getText()
+    ).toBe('9RCN7B');
   });
 });

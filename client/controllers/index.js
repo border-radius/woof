@@ -12,10 +12,5 @@ module.exports = [
       message: $routeParams.post,
       replies: $routeParams.post ? 1 : null
     });
-
-    $scope.user = $routeParams.user;
-    $scope.post = $routeParams.post;
-    $scope.club = $routeParams.club;
-    $scope.tag = $routeParams.tag;
   }
 ];
