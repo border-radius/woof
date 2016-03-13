@@ -89,5 +89,13 @@ describe('client', function () {
     expect(tags.get(2).getText()).toEqual('*гулаг');
     expect(tags.get(3).getText()).toEqual('*stop_censorship');
     expect(tags.get(0).getAttribute('href')).toEqual('http://localhost:8888/u/anonymous/t/%D1%83%D0%B1%D0%BB%D1%8E%D0%B4%D0%BA%D0%B8');
+
+    var recommendations = message.all(by.css('.recommendation'));
+
+    expect(recommendations.count()).toBe(3);
+    expect(recommendations.get(0).getText()).toBe('goren');
+    expect(recommendations.get(1).getText()).toBe('hate-engine');
+    expect(recommendations.get(2).getText()).toBe('krkm');
+    expect(recommendations.get(0).element(by.css('img')).getAttribute('src')).toBe('https://bnw.im/u/goren/avatar');
   });
 });

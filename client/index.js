@@ -15,4 +15,5 @@ app.directive('username', require('./directives/username'));
 app.directive('text', require('./directives/text'));
 app.directive('taglist', require('./directives/taglist'));
 app.directive('datestr', require('./directives/datestr'));
+app.directive('recommendations', require('./directives/recommendations'));
 app.controller('index', require('./controllers/index'));
