@@ -8,4 +8,5 @@ var ngSanitize = require('angular-sanitize');
 var app = angular.module('woof', [ngRoute, ngResource, ngSanitize]);
 
 app.config(require('./router'));
+app.service('bnw', require('./services/bnw'));
 app.controller('index', require('./controllers/index'));

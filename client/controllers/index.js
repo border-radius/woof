@@ -3,7 +3,16 @@
 module.exports = [
   '$scope',
   '$routeParams',
-  function ($scope, $routeParams) {
+  'bnw',
+  function ($scope, $routeParams, bnw) {
+    $scope.show = bnw.get({
+      tag: $routeParams.tag,
+      user: $routeParams.user,
+      club: $routeParams.club,
+      message: $routeParams.post,
+      replies: $routeParams.post ? 1 : null
+    });
+
     $scope.user = $routeParams.user;
     $scope.post = $routeParams.post;
     $scope.club = $routeParams.club;

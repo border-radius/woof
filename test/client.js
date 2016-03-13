@@ -25,24 +25,30 @@ describe('client', function () {
   it('should check router work properly', function () {
     var params;
     
-    params = testRouter('/u/username');
-    expect(params.user.getText()).toBe('username');
+    params = testRouter('/u/vrusha');
+    expect(params.user.getText()).toBe('vrusha');
+    expect(params.user.evaluate('show.messages[0].user')).toBe('vrusha');
     
-    params = testRouter('/c/clubname');
-    expect(params.club.getText()).toBe('clubname');
+    params = testRouter('/c/iranian');
+    expect(params.club.getText()).toBe('iranian');
+    expect(params.club.evaluate('show.messages[0].text')).toBe('Welcome to Iranian Club');
 
-    params = testRouter('/t/tagname');
-    expect(params.tag.getText()).toBe('tagname');
+    params = testRouter('/t/rorschach');
+    expect(params.tag.getText()).toBe('rorschach');
+    expect(params.club.evaluate('show.messages[0].id')).toBe('WJF6FI');
 
-    params = testRouter('/p/postid');
-    expect(params.post.getText()).toBe('postid');
+    params = testRouter('/p/DL9OGX');
+    expect(params.post.getText()).toBe('DL9OGX');
+    expect(params.post.evaluate('show.replies[1].text')).toBe('хуест');
 
-    params = testRouter('/u/username/c/clubname');
-    expect(params.user.getText()).toBe('username');
-    expect(params.club.getText()).toBe('clubname');
+    params = testRouter('/u/ileamare/c/nethack');
+    expect(params.user.getText()).toBe('ileamare');
+    expect(params.club.getText()).toBe('nethack');
+    expect(params.user.evaluate('show.messages[4].id')).toBe('CZJVJN');
 
-    params = testRouter('/u/username/t/tagname');
-    expect(params.user.getText()).toBe('username');
-    expect(params.tag.getText()).toBe('tagname');
+    params = testRouter('/u/muromec/t/анархи');
+    expect(params.user.getText()).toBe('muromec');
+    expect(params.tag.getText()).toBe('анархи');
+    expect(params.user.evaluate('show.messages[0].id')).toBe('089YX8');
   });
 });
