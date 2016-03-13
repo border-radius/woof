@@ -98,4 +98,14 @@ describe('client', function () {
     expect(recommendations.get(2).getText()).toBe('krkm');
     expect(recommendations.get(0).element(by.css('img')).getAttribute('src')).toBe('https://bnw.im/u/goren/avatar');
   });
+
+  it('should check quoting works properly', function () {
+    browser.get('http://localhost:8888/p/G01TVD');
+
+    var messages = element.all(by.css('.message'));
+    var reply = messages.get(3);
+
+    expect(reply.element(by.css('quote img')).getAttribute('src')).toBe('https://bnw.im/u/anonymous/avatar');
+    expect(reply.element(by.css('quote .text')).getText()).toBe('хуле ты мне тут удаляешь, цитировать — так до конца');
+  });
 });

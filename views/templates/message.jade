@@ -1,6 +1,7 @@
 .message
   userpic(user="content.user")
   username(user="content.user")
+  quote(ng-if="content.replyto" content="getMessage(content.replyto)")
   text(content="content.text" rich="true" replyto="content.replyto")
   taglist(ng-if="content.tags" tags="content.tags" clubs="content.clubs" user="content.user")
   datestr(date="content.date")

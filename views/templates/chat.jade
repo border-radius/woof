@@ -1,4 +1,4 @@
 .chat
   message(ng-repeat="message in show.messages|orderBy:'-date'" content="message" joinable="true")
   message(ng-if="show.message" content="show.message")
-  message(ng-repeat="reply in show.replies|orderBy:'date'" content="reply")
+  message(ng-repeat="reply in show.replies|orderBy:'date'" content="reply" messages="show.replies")
