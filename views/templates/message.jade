@@ -1,6 +1,7 @@
 .message
   userpic(user="content.user")
   username(user="content.user")
+  text(content="content.text" rich="true" replyto="content.replyto")
   .text(ng-bind="content.text")
   .id(ng-bind="content.id")
   .join(ng-if="joinable") Join

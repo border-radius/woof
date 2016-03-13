@@ -12,4 +12,5 @@ app.service('bnw', require('./services/bnw'));
 app.directive('message', require('./directives/message'));
 app.directive('userpic', require('./directives/userpic'));
 app.directive('username', require('./directives/username'));
+app.directive('text', require('./directives/text'));
 app.controller('index', require('./controllers/index'));
