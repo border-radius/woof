@@ -13,4 +13,6 @@ app.directive('message', require('./directives/message'));
 app.directive('userpic', require('./directives/userpic'));
 app.directive('username', require('./directives/username'));
 app.directive('text', require('./directives/text'));
+app.directive('taglist', require('./directives/taglist'));
+app.directive('datestr', require('./directives/datestr'));
 app.controller('index', require('./controllers/index'));

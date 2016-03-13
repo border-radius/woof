@@ -1,0 +1,3 @@
+.date(title="{{date * 1000|date:'HH:mm:ss dd.MM.yyyy'}}")
+  span(ng-bind="date * 1000|date:'HH:mm'")
+  span(ng-if="date < showDateBefore" ng-bind="date * 1000|date:'dd.MM.yyyy'")

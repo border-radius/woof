@@ -1,0 +1,3 @@
+.taglist
+  a(ng-repeat="club in clubs" href="/u/{{user}}/c/{{club}}" ng-bind="'!' + club")
+  a(ng-repeat="tag in tags" href="/u/{{user}}/t/{{tag}}" ng-bind="'*' + tag")

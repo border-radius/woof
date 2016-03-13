@@ -78,5 +78,16 @@ describe('client', function () {
     var message = element.all(by.css('.message')).get(0);
 
     expect(message.element(by.css('.text')).getInnerHtml()).toEqual('<p><a href="https://tjournal.ru/p/twitter-new-rules-ban" target="_blank">https://tjournal.ru/p/twitter-new-rules-ban</a></p>\n<blockquote><p>&gt;Михайлов временно перешёл на Фейсбук, однако и там ему на сутки  заблокировали возможность писать новые посты после публикации скриншотов  нескольких твитов, нарушавших правила Твиттера. По словам  блогера, он подавал жалобы на твиты публицистов Егора Холмогорова и  Егора Просвирнина с призывами к убийствам, однако их блокировки ему  добиться не удалось.</p></blockquote>\n<p>Вообще вся статья просто уморительная история.</p>\n<p>Святой человек Миша В. был совершенно прав: SJW, исламисты, и путинисты вообще ничем не отличаются друг от друга. Всё они сторонники цензуры и яростные противники свободы слова, свободы совести, промискуитета и всех остальных неотчуждаемых прав человека.</p>\n<p>В данной статье рассказывается как SJW и путинисты выступили единым фронтом. Ничего удивительного. Между этими двумя группами разницы вообще-то никакой, SJW - это такие западные путинисты.</p>');
+
+    expect(message.element(by.css('.date')).getText()).toEqual('15:3931.12.2015');
+    expect(message.element(by.css('.date')).getAttribute('title')).toEqual('15:39:32 31.12.2015');
+
+    var tags = message.all(by.css('.taglist a'));
+    
+    expect(tags.get(0).getText()).toEqual('*ублюдки');
+    expect(tags.get(1).getText()).toEqual('*леваки');
+    expect(tags.get(2).getText()).toEqual('*гулаг');
+    expect(tags.get(3).getText()).toEqual('*stop_censorship');
+    expect(tags.get(0).getAttribute('href')).toEqual('http://localhost:8888/u/anonymous/t/%D1%83%D0%B1%D0%BB%D1%8E%D0%B4%D0%BA%D0%B8');
   });
 });

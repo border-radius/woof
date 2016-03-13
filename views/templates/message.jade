@@ -2,6 +2,8 @@
   userpic(user="content.user")
   username(user="content.user")
   text(content="content.text" rich="true" replyto="content.replyto")
+  taglist(ng-if="content.tags" tags="content.tags" clubs="content.clubs" user="content.user")
+  datestr(date="content.date")
   .text(ng-bind="content.text")
   .id(ng-bind="content.id")
   .join(ng-if="joinable") Join
