@@ -10,4 +10,5 @@ var app = angular.module('woof', [ngRoute, ngResource, ngSanitize]);
 app.config(require('./router'));
 app.service('bnw', require('./services/bnw'));
 app.directive('message', require('./directives/message'));
+app.directive('userpic', require('./directives/userpic'));
 app.controller('index', require('./controllers/index'));

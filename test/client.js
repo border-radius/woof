@@ -28,6 +28,12 @@ describe('client', function () {
     expect(
       params.messages.get(0).element(by.css('.user')).getText()
     ).toBe('vrusha');
+    expect(
+      params.messages.get(0).element(by.css('.userpic a')).getAttribute('href')
+    ).toBe('http://localhost:8888/u/vrusha');
+    expect(
+      params.messages.get(0).element(by.css('.userpic img')).getAttribute('src')
+    ).toBe('https://bnw.im/u/vrusha/avatar');
     
     params = testRouter('/c/iranian');
     expect(params.chat.evaluate('show.messages[0].text')).toBe('Welcome to Iranian Club');
