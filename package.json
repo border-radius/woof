@@ -17,6 +17,7 @@
     "less-middleware": "^2.1.0",
     "lodash": "^4.6.1",
     "mokou-websocket": "^1.0.0",
+    "normalize.less": "^1.0.0",
     "supertest": "^1.2.0"
   },
   "devDependencies": {

@@ -47,8 +47,8 @@ describe('client', function () {
     params = testRouter('/t/rorschach');
     expect(params.chat.evaluate('show.messages[0].id')).toBe('WJF6FI');
     expect(
-      params.messages.get(0).element(by.css('.id')).getText()
-    ).toBe('WJF6FI');
+      params.messages.get(0).element(by.css('.username')).getText()
+    ).toBe('8');
     expect(
       params.chat.element(by.css('.join')).getText()
     ).toBe('Join');
@@ -56,8 +56,8 @@ describe('client', function () {
     params = testRouter('/p/DL9OGX');
     expect(params.chat.evaluate('show.replies[1].text')).toBe('хуест');
     expect(
-      params.messages.get(2).element(by.css('.id')).getText()
-    ).toBe('DL9OGX/YAX');
+      params.messages.get(2).element(by.css('.text')).getText()
+    ).toBe('хуест');
 
     params = testRouter('/u/ileamare/c/nethack');
     expect(params.chat.evaluate('show.messages[4].id')).toBe('CZJVJN');
@@ -68,8 +68,8 @@ describe('client', function () {
     params = testRouter('/u/muromec/t/анархи');
     expect(params.chat.evaluate('show.messages[0].id')).toBe('089YX8');
     expect(
-      params.messages.get(0).element(by.css('.id')).getText()
-    ).toBe('9RCN7B');
+      params.messages.get(0).element(by.css('.username')).getText()
+    ).toBe('muromec');
   });
 
   it('should check formatting works properly', function () {
