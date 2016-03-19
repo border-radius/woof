@@ -1,6 +1,7 @@
 'use strict';
 
 var urlPattern = /(^|&lt;|[\s\(\[])(https?:\/\/[^\]\)\s]+)/g;
+var quotePattern = /&quot;.+&quot;/g;
 
 //because $sanitize sucks
 function sanitize (html) {
@@ -43,6 +44,11 @@ module.exports = function () {
               return ['<p>', '</p>'].join(line);
             }
           }).join('\n');
+
+          //pleasant quotes
+          text = text.replace(quotePattern, function (match) {
+            return ['<em>', '</em>'].join(match);
+          });
         }
 
         scope.html = text;
